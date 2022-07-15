@@ -7,7 +7,8 @@ Cristhian Estrada A01700043
 
 A keyword cipher is a form of monoalphabetic substitution. A keyword is used as a key and determines the matches of letters from the cipher alphabet to the plain alphabet. Letter repetitions in the word are removed, then the cipher alphabet is generated with the keyword matching A, B, C, etc. until the keyword is exhausted, after which the rest of the letters in the text encryption are used in alphabetical order, excluding those already used in the key.
 
-![enter image description here](https://slideplayer.com/slide/16787073/97/images/4/Mixed+Alphabet+Keyword.jpg = 250x250)
+<a href="url"><img src="https://slideplayer.com/slide/16787073/97/images/4/Mixed+Alphabet+Keyword.jpg" align="left" height="48" width="48" ></a>
+
 
 ##  Proposed Solution
 The objective of this project will be to implement a keyword encryption algorithm in the Elixir programming language. This program will allow us to read plain text from a file and create a file with encrypted text or  read an encrypted file and create a plain text file from a word that will be used as a key.
