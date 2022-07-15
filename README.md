@@ -10,7 +10,7 @@ A keyword cipher is a form of monoalphabetic substitution. A keyword is used as 
 
 ##  Proposed Solution
 The objective of this project will be to implement a keyword encryption algorithm in the Elixir programming language. This program will allow us to read plain text from a file and create a file with encrypted text or  read an encrypted file and create a plain text file from a word that will be used as a key.
-![enter image description here](https://www.skyhighsecurity.com/sse/en-us/img/diagrams/sample-encryption-decryption-process.png)
+![enter image description here](https://www.atpinc.com/upload/images/2020/04-22/4e79465eb02f4422a7c4bba9f99ffa09.jpg)
 
 
 ##  Tools
