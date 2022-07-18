@@ -1,6 +1,8 @@
 ﻿# Keyword-Cipher
 
-Cristhian Estrada A01700043 \n
+Cristhian Estrada A01700043
+
+
 Jose Luis Mata A01377205
 
 # Description
