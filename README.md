@@ -51,7 +51,7 @@ Forseeing the functions we are going to make in order to complete the project, w
 * Recursive functions for encryption and decryption.
 * I/O functions to post data in a .txt file
 
-![enter image description here](https://slideplayer.com/slide/16787073/97/images/4/Mixed+Alphabet+Keyword.jpg)
+![enter image description here](https://www.ssl2buy.com/wiki/wp-content/uploads/2015/12/Symmetric-Encryption.png)
 ## What does it will include?
 ### Files
 - [] README
