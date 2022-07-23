@@ -1,45 +1,66 @@
 defmodule  Cipher do
+  # c"cipher.ex"
   # Cipher.main("input1.txt","Dragon")
   def main(input,keyword)
   do
     input
     |>Cipher.read_contents()
-    |>Cipher.process_encryption(keyword)
+    |>Cipher.encryption_process(keyword)
   end
+
   def read_contents(list)
-do
+  do
   File.stream!(list)
   |>Enum.map(fn x -> String.trim(x)end)
   |>Enum.map(fn x -> String.split(x, ",")end)
+  end
+
+  def encryption_process(content,keyword)
+  do
+
+  alfabeto=Cipher.alphabet_encryption(keyword)
+  newcontent=Enum.map(content,fn [x] -> String.split(x ,"", trim: true)end)
+  dos=Enum.map(newcontent,fn x -> Cipher.letter_encryption(x,alfabeto)end)
+  trp=Enum.map(dos,fn x -> List.to_string(x)end)
+  cosas=Cipher.data_parser(trp)
+  Cipher.store_txt(cosas)
+  end
+
+  def data_parser(data)
+  do
+    data
+    |>Enum.map_join( "\n",&(&1))
+  end
+
+  def alphabet_encryption(keyword)
+do
+ kw = keyword |>String.upcase() |>String.split("", trim: true) |>Enum.uniq()
+ Enum.uniq( kw ++ Enum.map(Enum.to_list(?A..?Z), fn(n) -> <<n>> end))
+
 end
 
-def process_encryption(content,keyword)
+def letter_encryption(letter,alphabet)
 do
-  upkeyword=String.upcase(keyword)
-  keyletters=String.split(upkeyword ,"", trim: true)
-  alphabet=Enum.map(Enum.to_list(?A..?Z), fn(n) -> <<n>> end)
-  concatenate = keyletters ++ alphabet
-  keyalphabet= Enum.uniq(concatenate)
-  #.................................................
-  linea1=Enum.at(content, 1)
-  linea1string=List.to_string(linea1)
-  listofwords=String.split(linea1string ," ", trim: true)
-  #...........................................................
-  linea1=Enum.at(listofwords, 0)
-  listletters=String.split(linea1 ,"", trim: true)
-  #.............................................................
-  Cipher.letter_encryption(listletters, keyalphabet)
-end
-def alphabet_encryption(letter,keyalphabet)
-do
-   #letter
-   #keyalphabet
+
+  Enum.map(letter,fn x -> Cipher.change_letter(x, alphabet)end)
 end
 
-def letter_encryption(letter,keyalphabet)
+def letter_comparator(letter,alphabet)
 do
-   #letter
-   #keyalphabet
+  Enum.map(letter,fn x -> String.upcase(x,alphabet)end)
 end
 
+def store_txt(data) do
+  [data]
+  |> Enum.into(File.stream!("output.txt"))
+end
+
+def change_letter(x, alphabet) do
+  case x do
+  "T"-> "Element Alphabet"
+  "t"-> "Element Alphabet 2"
+  _ -> "D"
+end
+
+end
 end
