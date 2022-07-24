@@ -54,40 +54,43 @@ Forseeing the functions we are going to make in order to complete the project, w
 ![enter image description here](https://www.ssl2buy.com/wiki/wp-content/uploads/2015/12/Symmetric-Encryption.png)
 ## What does it will include?
 ### Files
-- [] README
-- [] cipher.exs (main file)
-- [] source.txt
-- [] destination.txt
+- [X] README
+- [X] cipher.ex (main file)
+- [X] input.txt
 ## Functions
 
 1. **main**
 
-Takes four arguments: a string with the full path to a txt file to read, and another to a txt file where the results will be stored, a string that will be used as a keyword and a boolean that represents encryption or decryption.
+Function that takes four arguments. A string containing the path to the input file, a sting containing the path to the output file, a string representing the keyword to encrypt, and an atom representing the operation to perform.
+
+This function call three functions that will allow us to read the file, encrypt the content and write to the output file.
 
 2. **read_contents**
 
 Takes a string with the full path to a txt file. It will open the file and return its contents in a list, where each element is a row in the file.
 
-3. **data_encryption**
+3. **cryptic_process**
 
-Takes two arguments a list of elements and a keyword, it will  call functions needed to parse encrypted alphabet with a keyword, divide elements into simpler ones and transform simpler elements into encrypted words.
+Takes three arguments.  A list of list with the content of input file, a string with the keyword to use during encryption or decryption and a atom that represents operation to do.  It will allow us to simplify data recovered from input file, call needed functions to encrypt or decrypt, and parse the information with symbols needed to represent rows in the txt file.
 
-4. **element_simplifier**
+4. **data_parser**
 
-Receives a list of strings as an argument, through iteration over the elements it will create a list of letters for each word
+Recieves as argument a list with the encrypted information, it will allow us to add the symbols needed to represent rows in the txt file.
 
 
 5. **alphabet_encryption**
 
-Receives a keyword as an argument, creates a character string that is combined into a list of characters from the alphabet to create an encrypted alphabet.
+Recieves as argument a keyword string, it will create a 26 letters encrypted alphabet list, that will allow us to represent indexes in encryption or decryption.
 
-6. **letter_replace**
+6. **letter_parser**
 
-Takes as an argument a list of letters, and a encrypted alphabet. It will change given letters for its corresponding element in the encrypted alphabet
+Function that receives three arguments, a list with letters of input file data content, an encrypted alphabet, and an operation to realize.
 
-7. **data_decryption**
+It will simplify list of letters into items, and call functions needed to encode or decode every letter.
 
-Takes two arguments a list of elements and a keyword, it will  call functions needed to parse encrypted alphabet into a plain one, divide encrypted elements into simpler ones and transform simple elements into plain words.
+7. **letter_encryption**
+
+  Function that recieves a letter, an encrypted alphabet, and an operation to realize.  It will match operation case and allow us to transform plain letters into letters from the encrypted alphabet according to its matching index, and other way around in case of decryption.
 
 8. **store_csv**
 
@@ -100,3 +103,4 @@ Wikimedia Foundation. (2022, June 24). _Substitution cipher_. Wikipedia. Retriev
 Wikimedia Foundation. (2022, June 16). _Cipher_. Wikipedia. Retrieved July 18, 2022, from https://en.wikipedia.org/wiki/Cipher
 
 _Blog_. What is a keyword Cypher? (n.d.). Retrieved July 18, 2022, from https://high-tech-guide.com/article/what-is-a-keyword-cypher
+
