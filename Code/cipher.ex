@@ -4,8 +4,8 @@
   # 28/ 07 / 2022
 
 defmodule  Cipher do
-  # Cipher.main("input1.txt","output1.txt","Dragon", :encrypt)
-  # Cipher.main("output1.txt","output2.txt","Dragon", :decrypt)
+  # Cipher.main("input1.txt","output1.txt","keyword", :encrypt)
+  # Cipher.main("output1.txt","output2.txt","keyword", :decrypt)
 
   @doc """
      Recieves as arguments, input file path, output file path, keyword to cipher and operation atom.
@@ -107,65 +107,9 @@ def letter_encryption(letter, alphabet,operation) do
   case operation
       do
         :encrypt->
-          case letter do
-            "A" -> Enum.at(alphabet, 0)
-            "B" -> Enum.at(alphabet, 1)
-            "C" -> Enum.at(alphabet, 2)
-            "D" -> Enum.at(alphabet, 3)
-            "E" -> Enum.at(alphabet, 4)
-            "F" -> Enum.at(alphabet, 5)
-            "G" -> Enum.at(alphabet, 6)
-            "H" -> Enum.at(alphabet, 7)
-            "I" -> Enum.at(alphabet, 8)
-            "J" -> Enum.at(alphabet, 9)
-            "K" -> Enum.at(alphabet, 10)
-            "L" -> Enum.at(alphabet, 11)
-            "M" -> Enum.at(alphabet, 12)
-            "N" -> Enum.at(alphabet, 13)
-            "O" -> Enum.at(alphabet, 14)
-            "P" -> Enum.at(alphabet, 15)
-            "Q" -> Enum.at(alphabet, 16)
-            "R" -> Enum.at(alphabet, 17)
-            "S" -> Enum.at(alphabet, 18)
-            "T" -> Enum.at(alphabet, 19)
-            "U" -> Enum.at(alphabet, 20)
-            "V" -> Enum.at(alphabet, 21)
-            "W" -> Enum.at(alphabet, 22)
-            "X" -> Enum.at(alphabet, 23)
-            "Y" -> Enum.at(alphabet, 24)
-            "Z" -> Enum.at(alphabet, 25)
-             _ -> letter
-            end
+           Enum.at(alphabet, Enum.find_index(Enum.map(Enum.to_list(?A..?Z), fn(n) -> <<n>>end), fn x -> x === letter end))
        :decrypt->
-        cond  do
-          Enum.at(alphabet, 0) === letter -> "A"
-          Enum.at(alphabet, 1) === letter -> "B"
-          Enum.at(alphabet, 2) === letter -> "C"
-          Enum.at(alphabet, 3) === letter -> "D"
-          Enum.at(alphabet, 4) === letter -> "E"
-          Enum.at(alphabet, 5) === letter -> "F"
-          Enum.at(alphabet, 6) === letter -> "G"
-          Enum.at(alphabet, 7) === letter -> "H"
-          Enum.at(alphabet, 8) === letter -> "I"
-          Enum.at(alphabet, 9) === letter -> "J"
-          Enum.at(alphabet, 10) === letter -> "K"
-          Enum.at(alphabet, 11) === letter -> "L"
-          Enum.at(alphabet, 12) === letter -> "M"
-          Enum.at(alphabet, 13) === letter -> "N"
-          Enum.at(alphabet, 14) === letter -> "O"
-          Enum.at(alphabet, 15) === letter -> "P"
-          Enum.at(alphabet, 16) === letter -> "Q"
-          Enum.at(alphabet, 17) === letter -> "R"
-          Enum.at(alphabet, 18) === letter -> "S"
-          Enum.at(alphabet, 19) === letter -> "T"
-          Enum.at(alphabet, 20) === letter -> "U"
-          Enum.at(alphabet, 21) === letter -> "V"
-          Enum.at(alphabet, 22) === letter -> "W"
-          Enum.at(alphabet, 23) === letter -> "X"
-          Enum.at(alphabet, 24) === letter -> "Y"
-          Enum.at(alphabet, 25) === letter -> "Z"
-           true -> letter
-          end
+           Enum.at(Enum.map(Enum.to_list(?A..?Z), fn(n) -> <<n>>end), Enum.find_index(alphabet, fn x -> x === letter end))
         _ -> "Unrecognized Operation"
     end
 
