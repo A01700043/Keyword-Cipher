@@ -56,63 +56,80 @@ Forseeing the functions we are going to make in order to complete the project, w
 ### Files
 - [X] README
 - [X] cipher.ex (main file)
-- [X] input.txt
+- [X] Data (folder with input examples)
+- [X] Results (folder with output examples)
 ## Functions
 
 1. **main**
 
-Function that takes four arguments. A string containing the path to the input file, a sting containing the path to the output file, a string representing the keyword to encrypt, and an atom representing the operation to perform.
+Recieves 4 arguments, inputf string to input-file path, outputf string to output-file path, keyword a string with key-word to encrypt or decrypt, operation an atom to :encrypt or :decrypt.
 
-This function call three functions that will allow us to read the file, encrypt the content and write to the output file.
+This function calls read_contents(), to stream input file content, calls cryptic_process() to encrypt or decrypt input file data and store_txt to write the result in the output file.
 
 2. **read_contents**
 
-Takes a string with the full path to a txt file. It will open the file and return its contents in a list, where each element is a row in the file.
+Recieves 1 argument, inputf string to input-file path. It will stream input file content row by rows and add them to a list of list.
 
 3. **cryptic_process**
 
-Takes three arguments.  A list of list with the content of input file, a string with the keyword to use during encryption or decryption and a atom that represents operation to do.  It will allow us to simplify data recovered from input file, call needed functions to encrypt or decrypt, and parse the information with symbols needed to represent rows in the txt file.
+Recieves 3 arguments. data a list of list with file content, keyword a string withthe key word to encrypt or decrypt, operation an atom with the operation to perform:encrypt or :decrypt.
+
+It will split every list of row content into words, call function letter parser() for every word in order to encrypt or decrypt and data cypher in order to prepare data forwrite an output.
 
 4. **data_parser**
 
 Recieves as argument a list with the encrypted information, it will allow us to add the symbols needed to represent rows in the txt file.
 
 
-5. **alphabet_encryption**
+5. **cryptic_alphabet**
 
-Recieves as argument a keyword string, it will create a 26 letters encrypted alphabet list, that will allow us to represent indexes in encryption or decryption.
+Recieves 1 argument. keyword a string with key-word to encrypt or decrypt.
+
+It creates a list where every keyword letter is an element, then it is concatenated with a list of 26 alphabet letters and repeated elements are deleted.
 
 6. **letter_parser**
 
-Function that receives three arguments, a list with letters of input file data content, an encrypted alphabet, and an operation to realize.
+Recieves 3 arguments. letter a list of list with letters, alphabet the result of the cryptic alphabet function, operation an atom to :encrypt or :decrypt.
 
-It will simplify list of letters into items, and call functions needed to encode or decode every letter.
+It parses every letter in the list in order to prepare it for the encryption or decryption process, then it calls letter_encryption () for every item.
 
 7. **letter_encryption**
 
-  Function that recieves a letter, an encrypted alphabet, and an operation to realize.  It will match operation case and allow us to transform plain letters into letters from the encrypted alphabet according to its matching index, and other way around in case of decryption.
+ Recieves 3 arguments, letter a string with a single letter, alphabet a list with 26 letters, operation an atom to :encrypt or :decrypt.
 
-8. **store_csv**
+It will match operation case and allow us to transform plain letters into letters from the encrypted alphabet according to its matching index, and other way around in case of decryption.
 
-Takes a list of lists with the data, and a string with the full path to a file. It will write the contents of the matrix into a file, in txt format.
+8. **store_txt**
+
+Recieves 2 arguments, data a list of strings, outputf string to output-file path.
+
+It will write data stream into the specified output path.
 
 ## How to execute it?
-First of all, you will need to clone the repository
+Clone the repository
 ```
 git clone https://github.com/A01700043/Keyword-Cipher.git
 ```
-Then, just run the main file cipher.ex with the next line of code, there should be no errors or warnings
+Execute elixir interactive shell in the repository directory
 
-    iex cipher.ex
+    iex.bat
+Compile cipher.ex file
 
-Depending on what function you want to implement either encryption or decryption you will need to execute the following code.
+    c"cipher.ex"
+The basic execution line will include the following elements.
 
-    Cipher.main("input.txt","output.txt","Key",:encrypt)
+    Cipher.main("input","output","keyword",:operation)
 
-Remember to provide a input txt file with plaintext in case of encryption or with encrypted text in case of decryption.
+Where every argument represents the following:
+
+    "input": A string representing the path of an input .txt file
+    "output": A string representing the path of an output .txt file
+    "keyword":A string representing the encryption key.
+    :operation: An atom representing either :encrypt or :decrypt process
+
     
-## Video
-- Link to video: #Insertlink
+## Screenshots
+#Insert Images Here
     
 ## References
 Wikimedia Foundation. (2022, June 24). _Substitution cipher_. Wikipedia. Retrieved July 15, 2022, from https://en.wikipedia.org/wiki/Substitution_cipher
@@ -120,4 +137,3 @@ Wikimedia Foundation. (2022, June 24). _Substitution cipher_. Wikipedia. Retriev
 Wikimedia Foundation. (2022, June 16). _Cipher_. Wikipedia. Retrieved July 18, 2022, from https://en.wikipedia.org/wiki/Cipher
 
 _Blog_. What is a keyword Cypher? (n.d.). Retrieved July 18, 2022, from https://high-tech-guide.com/article/what-is-a-keyword-cypher
-
