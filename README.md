@@ -96,6 +96,23 @@ It will simplify list of letters into items, and call functions needed to encode
 
 Takes a list of lists with the data, and a string with the full path to a file. It will write the contents of the matrix into a file, in txt format.
 
+## How to execute it?
+First of all, you will need to clone the repository
+```
+git clone https://github.com/A01700043/Keyword-Cipher.git
+```
+Then, just run the main file cipher.ex with the next line of code, there should be no errors or warnings
+
+    iex cipher.ex
+
+Depending on what function you want to implement either encryption or decryption you will need to execute the following code.
+
+    Cipher.main("input.txt","output.txt","Key",:encrypt)
+
+Remember to provide a input txt file with plaintext in case of encryption or with encrypted text in case of decryption.
+    
+## Video
+- Link to video: #Insertlink
     
 ## References
 Wikimedia Foundation. (2022, June 24). _Substitution cipher_. Wikipedia. Retrieved July 15, 2022, from https://en.wikipedia.org/wiki/Substitution_cipher
