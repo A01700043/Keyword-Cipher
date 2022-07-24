@@ -3,8 +3,8 @@
 # Jose Luis Mata A01377205
 # 28/07/2022
 
-# Cipher.main("input1.txt","output1.txt","dragon", :encrypt)
-# Cipher.main("output1.txt","output2.txt","dragon", :decrypt)
+# Cipher.main("Data/input1.txt","Results/output1.txt","dragon", :encrypt)
+# Cipher.main("Data/input2.txt","Results/output2.txt","dragon", :decrypt)
 
 defmodule  Cipher do
 
