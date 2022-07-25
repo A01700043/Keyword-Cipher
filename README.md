@@ -129,8 +129,19 @@ Where every argument represents the following:
 
     
 ## Screenshots
-#Insert Images Here
-    
+When cloning the repository from github, we will have the following folder.
+
+![enter image description here](https://lh3.googleusercontent.com/pw/AM-JKLX9F0LhJLyj6jFzkja4dzasDqZQ-HCvpChHYyEOU_khChnPuQ_XJsRxZ7Tbi8H9AaM6xTNBbfYjiJyvmcJ5Vmx3z0UzENXxNQM9fAqqMgq6tI85xudZ1oy-ItArL8ARMPk3OenfWQ2BytD4dJDNAzA=w1129-h593-no?authuser=0)
+    We open this folder with any editor that supports the elixir programming language, in this case we use visual studio code.
+    ![enter image description here](https://lh3.googleusercontent.com/pw/AM-JKLWnlypREtmlz4DBAjMkO2TK6oD0pHJTU4-IRQSATfG-BH6ZIgKDIoXWNi_rrP28rUABmZ-2PMEvbtLO2IxU2u5650jzjL3uSvHjvF1Zh0pVPvmWm2r68qeJryum_frtnjG6hEnG-F17ke_tSgCyaPM=w987-h534-no?authuser=0)
+    When opening the folder we will find 4 items, the README. md file, the cipher.ex file and two folders (data and results).![enter image description here](https://lh3.googleusercontent.com/pw/AM-JKLWqWoAfhjV9cwuQfJqY2nMKgi2zKz19KTbFSSQsfGBf5SOMWODCfCoO7C6Ye3_tn5Xs3GpentPgIb9QH0Ezs51FhRkQQQa_mJFKR3TpXJcr9oYWnjDX6ZFKbpWJCSdoqaaDTOce386WrJ9sa_Izic4=w980-h543-no?authuser=0)
+   Inside the data folder we can find .txt files that we can use as input examples for the cipher.![enter image description here](https://lh3.googleusercontent.com/pw/AM-JKLXjmnyHHRihBOZCC7nJDNAwHU_TLz1R2PY6RbgX0lylmEk0hUkvWMPjpVop92J1_TL_YUkaQYNFKesZzuuoobHqt0mw8q9-ad1j9Y9tDAIkxj1tOOgHmApuVL12jtcGSq4u9yheX3uB2gYNx0UUsTY=w1022-h539-no?authuser=0)
+    The cipher.ex file is the main file from which the program will run.
+    ![enter image description here](https://lh3.googleusercontent.com/pw/AM-JKLU76JFCoyj3hdYuygJ2uwCqtptFgQNSWEBEfPitz10WOhbEn8kF-PsI3HfFfsgWxpt9AquMxZu_Ej9e0SPivD7_ASxmubWBuSEQi38wMErx6kOq95281HkuhXlcKnuhj_YX-q75DLbzHLhO5ugpE2Y=w939-h542-no?authuser=0)
+    To execute it, we enter directly into the elixir shell executing the command iex.bat![enter image description here](https://lh3.googleusercontent.com/pw/AM-JKLUZipVNgW0ckJugcJ5LqumEs1wYd5M7F6ZqT2V_ecv20ZwQS1lvfV0nv3O-pQIf4bm6ubPM5Ur8pKM2Z-V7paIkb6LVpKlWG4BvvVfKaIv5Edf_a5K1Sju7WEJ_dNqCj2dSaw43cln1VR05fEbw9Ec=w1040-h518-no?authuser=0)
+    Once inside the elixir shell we compile the program using the c"cipher.ex" instruction![enter image description here](https://lh3.googleusercontent.com/pw/AM-JKLWYOVb3Cu9ZxeIP7aRNR0uOoKNSk5xy1c6ot7A8abRZvEcQikxJraQ2EW8d7hSWzaVs_3rxjrjuN7Mx7CI-vmo8eQIJA9w85SEiq10Uj7Rmstrdn59eQLcbGWCXgCd2QQ-etZnB3CFGQZocQpAZPaE=w1040-h515-no?authuser=0)
+   Once compiled we can call the main function using the following format. Cipher.main("input","output","keyword",:operation)![enter image description here](https://lh3.googleusercontent.com/pw/AM-JKLXDOWU1diEeBFVXQLLk2i_6RCq5Er9_KQNo0Bispd7Lxf5GzifUbF2dyoGIAz2XQarnADdANgc5FoT-tQJz3CrEVONCSIqd-XbCzkBJVmAVSla5EpwRZlGrNehejOvyf-D0iOnAsmIG4s9a2Bi9wNc=w1040-h545-no?authuser=0)
+ Once the program is executed, a .txt file will be created with the result. Inside the results folder we can find examples of output files![enter image description here](https://lh3.googleusercontent.com/pw/AM-JKLV_wlyUGq2pkwFL8Zfy3YE90Yilnk3e1IDKAcbSr8hKbTqn2_ytE6C3CzPFXvXXfhC35n2W43W3fCjh4NvXRbUGauEgFuOeZNDsC_5IqS-KS0y5nPpnK9EuCL1YmD02-ngee4x5y8XGc3eD9lBTG-E=w1041-h528-no?authuser=0)  
 ## References
 Wikimedia Foundation. (2022, June 24). _Substitution cipher_. Wikipedia. Retrieved July 15, 2022, from https://en.wikipedia.org/wiki/Substitution_cipher
 
